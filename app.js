@@ -36,16 +36,21 @@ const sessionConfig = {
     resave:false,
     saveUninitialized:true,
     cookie:{
+        domain:'localhost',
         httpOnly: true,
         // secure:true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        sameSite: 'none'
     }
 }
 //middlewares
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
-app.use(cors())
+app.use(cors({
+    origin:'http://localhost:5173',
+    credentials:true
+}))
 
 app.use(session(sessionConfig))
 app.use(passport.session());
