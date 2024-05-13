@@ -36,9 +36,7 @@ const sessionConfig = {
     resave:false,
     saveUninitialized:true,
     cookie:{
-        domain:'.onrender.com',
         httpOnly: true,
-        secure:true,
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7,
         sameSite: 'none'
