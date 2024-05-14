@@ -40,14 +40,14 @@ const sessionConfig = {
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7,
         sameSite: 'none',
-        secure:false
+        secure:true
     }
 }
 //middlewares
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://takoyaki-1.onrender.com/',
     credentials:true
 }))
 
