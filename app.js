@@ -47,7 +47,7 @@ const sessionConfig = {
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(cors({
-    origin:'https://takoyaki-1.onrender.com/',
+    origin:'https://takoyaki-1.onrender.com',
     credentials:true
 }))
 
