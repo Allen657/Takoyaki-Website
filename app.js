@@ -33,7 +33,7 @@ const sessionConfig = {
     store,
     name:'sessions',
     secret,
-    resave:false,
+    resave:true,
     saveUninitialized:false,
     cookie:{
         httpOnly: true,
